@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="address" class="com.liang.pojo.Address">
+        <property name="address" value="长沙"/>
+    </bean>
+
+    <bean id="student" class="com.liang.pojo.Student" name="studentAlias">
+        <!--普通-->
+        <property name="name" value="liang"/>
+        <!--引用类型-->
+        <property name="address" ref="address"/>
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>英语</value>
+                <value>数学</value>
+            </array>
+        </property>
+        <!--List-->
+        <property name="hobbies">
+            <list>
+                <value>看电视</value>
+                <value>上网</value>
+            </list>
+        </property>
+        <!--map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1234656"/>
+                <entry key="学生证" value="125445"/>
+            </map>
+        </property>
+
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!--properties-->
+        <property name="info">
+            <props>
+                <prop key="性别">男</prop>
+                <prop key="电话">123435</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
